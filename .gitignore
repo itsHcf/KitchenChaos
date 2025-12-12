@@ -1,0 +1,12 @@
+# Ignore everything at repository root
+/*
+
+# But do not ignore this .gitignore file
+!.gitignore
+
+# Un-ignore the Assets directory and everything under it
+!/Assets/
+!/Assets/**
+
+# (Optional) keep Git metadata and Unity/IDE settings tracked if needed
+!.gitattributes
