@@ -76,6 +76,26 @@ public class PlayerComponent : MonoBehaviour
         isWalking = moveDir != Vector3.zero;
     }
 
+    private void HandleSelectCounter()
+    {
+        float interactDistance = 2f;
+        if (Physics.Raycast(transform.position, lastMoveDir, out RaycastHit raycastHit, interactDistance, countersLayerMask))
+        {
+            if (raycastHit.transform.TryGetComponent<ClearCounter>(out ClearCounter clearCounter))
+            {
+                // Has ClearCounter
+            }
+            else
+            {
+                // No ClearCounter
+            }
+        }
+        else
+        {
+            // No hit
+        }
+    }
+
     public bool IsWalking()
     {
         return isWalking;
