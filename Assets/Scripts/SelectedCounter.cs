@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class SelectedCounter : MonoBehaviour
 {
-
     [SerializeField] private BaseCounter baseCounter;
-    [SerializeField] private List<GameObject> visualGameObjects = new List<GameObject>();
+    [SerializeField] private GameObject[] visualGameObjects;
     private void Start()
     {
         Player.Instance.OnSelectedCounterChanged += OnSelectedCounterChanged;
