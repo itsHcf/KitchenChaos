@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class KitchenObject : MonoBehaviour
 {
-    private BaseCounter baseCounter;
+    private IKitchenObjectParent kitchenObjectParent;
 
-    public void SetClearCounter(BaseCounter baseCounter)
+    public void SetBaseCounter(IKitchenObjectParent kitchenObjectParent)
     {
-        if (this.baseCounter != null)
+        if (this.kitchenObjectParent != null)
         {
-            this.baseCounter.SetKitchenObject(null);
+            this.kitchenObjectParent.SetKitchenObject(null);
         }
-        if (baseCounter == null)
+        if (kitchenObjectParent == null)
         {
             transform.parent = null;
         }
         else
         {
-            transform.parent = baseCounter.GetKitchenObjectSpawnPoint();
+            transform.parent = kitchenObjectParent.GetKitchenObjectSpawnPoint();
             transform.localPosition = Vector3.zero;
-            baseCounter.SetKitchenObject(this);
+            kitchenObjectParent.SetKitchenObject(this);
         }
-        this.baseCounter = baseCounter;
+        this.kitchenObjectParent = kitchenObjectParent;
     }
 }

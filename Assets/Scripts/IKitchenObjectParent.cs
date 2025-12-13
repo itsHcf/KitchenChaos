@@ -6,7 +6,6 @@ public interface IKitchenObjectParent
 {
     public bool HasKitchenObject();
 
-
     public KitchenObject GetKitchenObject();
 
     public void SetKitchenObject(KitchenObject kitchenObject);

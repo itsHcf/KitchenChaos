@@ -5,7 +5,7 @@ using UnityEngine;
 public class ContainerCounter : BaseCounter
 {
     [SerializeField] private KitchenObjectSO kitchenObjectSO;
-    public override void Interact()
+    public override void Interact(Player player)
     {
         if (GetKitchenObject() != null)
         {
@@ -13,6 +13,6 @@ public class ContainerCounter : BaseCounter
         }
         Transform tomatoTransform = Instantiate(kitchenObjectSO.prefab);
         KitchenObject kitchenObject = tomatoTransform.GetComponent<KitchenObject>();
-        kitchenObject.SetClearCounter(this);
+        kitchenObject.SetBaseCounter(player);
     }
 }

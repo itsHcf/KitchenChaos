@@ -40,7 +40,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
 
     private void GameInput_OnInteractAction(object sender, EventArgs e)
     {
-        selectedCounter?.Interact();
+        selectedCounter?.Interact(this);
     }
 
     private void Update()

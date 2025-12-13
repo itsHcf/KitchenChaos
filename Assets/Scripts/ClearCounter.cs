@@ -9,7 +9,7 @@ public class ClearCounter : BaseCounter
     [SerializeField] private KitchenObjectSO kitchenObjectSO;
 
     // Press E key
-    public override void Interact()
+    public override void Interact(Player player)
     {
     }
 
