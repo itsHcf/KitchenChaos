@@ -7,16 +7,18 @@ public class PlayerComponent : MonoBehaviour
 {
 
 
+    [SerializeField] private float moveSpeed = 5f;
+
+    [SerializeField] private float rotationSpeed = 10f; // degrees per second
+
+    [SerializeField] private GameInput gameInput;
+
+    [SerializeField] private LayerMask countersLayerMask;
+
     private bool isWalking = false;
-
     private Vector3 lastMoveDir;
-    [SerializeField]private float moveSpeed = 5f;
 
-    [SerializeField]private float rotationSpeed = 10f; // degrees per second
-
-    [SerializeField]private GameInput gameInput;
-
-    [SerializeField]private LayerMask countersLayerMask;
+    private ClearCounter selectedCounter;
 
     private void Start()
     {
@@ -25,19 +27,13 @@ public class PlayerComponent : MonoBehaviour
 
     private void GameInput_OnInteractAction(object sender, EventArgs e)
     {
-        float interactDistance = 2f;
-        if (Physics.Raycast(transform.position, lastMoveDir, out RaycastHit raycastHit, interactDistance, countersLayerMask))
-        {
-            if (raycastHit.transform.TryGetComponent<ClearCounter>(out ClearCounter clearCounter))
-            {
-                clearCounter.Interact();
-            }
-        }
+        selectedCounter?.Interact();
     }
 
     private void Update()
     {
         HandleMovement();
+        HandleSelectCounter();
     }
 
     private void HandleMovement()
@@ -83,21 +79,33 @@ public class PlayerComponent : MonoBehaviour
         {
             if (raycastHit.transform.TryGetComponent<ClearCounter>(out ClearCounter clearCounter))
             {
-                // Has ClearCounter
+                if (clearCounter != selectedCounter)
+                {
+                    SetSelectedCounter(clearCounter);
+                }
             }
             else
             {
                 // No ClearCounter
+                SetSelectedCounter(null);
             }
         }
         else
         {
             // No hit
+            SetSelectedCounter(null);
         }
     }
 
     public bool IsWalking()
     {
         return isWalking;
+    }
+
+    private void SetSelectedCounter(ClearCounter clearCounter)
+    {
+        selectedCounter?.Deselect();
+        selectedCounter = clearCounter;
+        selectedCounter?.Select();
     }
 }

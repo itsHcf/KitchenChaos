@@ -16,14 +16,12 @@ public class GameInput : MonoBehaviour
 
     private void Interact_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        Debug.Log("Interact Pressed");
-
-        OnInteractAction?.Invoke(this, EventArgs.Empty);      
+        OnInteractAction?.Invoke(this, EventArgs.Empty);
     }
-    public  Vector2 GetMovementVectorNormalized()
+    public Vector2 GetMovementVectorNormalized()
     {
         Vector2 inputVector = inputActions.Player.Move.ReadValue<Vector2>();
-        
+
         return inputVector.normalized;
     }
 }
