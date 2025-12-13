@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentVersion: 1.01
   subtype: kitchenchaos
-  lastShownTimestamp: 1765528720
+  lastShownTimestamp: 1765616689
   lastUpdateResponse:
     version: 1.01
     versionUrl: https://unitycodemonkey.com
-  checkedLastUpdateTimestamp: 1765602051
+  checkedLastUpdateTimestamp: 1765616689
   lastQOTDResponse:
     questionId: 251
     questionText: What is the difference between Application.dataPath and Application.persistentDataPath
@@ -30,7 +30,7 @@ MonoBehaviour:
       is on the User Data
     answerD: 
     answerE: 
-  lastQotdTimestamp: 1765602051
+  lastQotdTimestamp: 1765616689
   lastDynamicHeaderResponse:
     topImageUrl: https://codemonkeyexternal.blob.core.windows.net/external/Misc/unityCodeMonkeyBundleDec2025.png
     topText: I made a Bundle alongside the Asset Store! Awesome deal on new-never-discounted
@@ -38,11 +38,11 @@ MonoBehaviour:
     topLink: cmbundleassetstore
     bottomText: My 10+ Years of C# Knowledge in 1 Course!
     bottomLink: csharpcourse
-  lastDynamicHeaderTimestamp: 1765602051
+  lastDynamicHeaderTimestamp: 1765616689
   websiteLatestMessage:
     text: <a href="https://cmonkey.co/freecourses">Check out all my FREE courses!
       Click here!</a>
-  websiteLatestMessageTimestamp: 1765602051
+  websiteLatestMessageTimestamp: 1765616689
   websiteLatestVideos:
     videos:
     - youTubeId: Lg0ARMsa2ZU
@@ -53,4 +53,4 @@ MonoBehaviour:
       title: TOP 10 NEW Games, Made with Unity! (NOVEMBER 2025)
     - youTubeId: wAI7TNtW7xM
       title: How MUCH is your Time WORTH?
-  websiteLatestVideosTimestamp: 1765602051
+  websiteLatestVideosTimestamp: 1765616689

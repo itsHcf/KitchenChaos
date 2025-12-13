@@ -9,7 +9,7 @@ public class PlayerAnimator : MonoBehaviour
 
     private Animator animator;
 
-    [SerializeField] private Player playerComponent;
+    [SerializeField] private Player player;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -17,10 +17,10 @@ public class PlayerAnimator : MonoBehaviour
 
     private void Update()
     {
-        if (playerComponent == null)
+        if (player == null || animator == null)
         {
             return;
         }
-        animator.SetBool(IS_WALKING, playerComponent.IsWalking());
+        animator.SetBool(IS_WALKING, player.IsWalking());
     }
 }
