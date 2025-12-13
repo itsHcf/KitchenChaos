@@ -9,7 +9,7 @@ public class PlayerAnimator : MonoBehaviour
 
     private Animator animator;
 
-    [SerializeField]private PlayerComponent playerComponent;
+    [SerializeField] private Player playerComponent;
     private void Awake()
     {
         animator = GetComponent<Animator>();

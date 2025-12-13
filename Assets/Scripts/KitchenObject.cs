@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class KitchenObject : MonoBehaviour
 {
-    // Start is called before the first frame update
     private ClearCounter clearCounter;
-
 
     public void SetClearCounter(ClearCounter clearCounter)
     {
-        this.clearCounter = clearCounter;
+        if (this.clearCounter != null)
+        {
+            this.clearCounter.SetKitchenObject(null);
+        }
         if (clearCounter == null)
         {
             transform.parent = null;
         }
+        else
+        {
+            transform.parent = clearCounter.KitchenObjectSpawnPoint;
+            clearCounter.SetKitchenObject(this);
+        }
+        this.clearCounter = clearCounter;
     }
 }

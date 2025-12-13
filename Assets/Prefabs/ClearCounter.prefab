@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedCounterVisual: {fileID: 6717916822038408916}
   kitchenObjectSO: {fileID: 0}
-  KitchenObjectSpawnPoint: {fileID: 138356990796902269}
+  kitchenObjectSpawnPoint: {fileID: 138356990796902269}
 --- !u!1001 &7100811871025171070
 PrefabInstance:
   m_ObjectHideFlags: 0

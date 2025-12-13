@@ -9,10 +9,11 @@ public class ClearCounter : MonoBehaviour
 
     [SerializeField] private KitchenObjectSO kitchenObjectSO;
 
-    [SerializeField] private Transform KitchenObjectSpawnPoint;
+    [SerializeField] private Transform kitchenObjectSpawnPoint;
 
     private KitchenObject kitchenObject;
 
+    // Press E key
     public void Interact()
     {
         if (kitchenObject != null)
@@ -34,4 +35,22 @@ public class ClearCounter : MonoBehaviour
     {
         selectedCounterVisual.SetActive(false);
     }
+
+    public bool HasKitchenObject()
+    {
+        return kitchenObject != null;
+    }
+
+    public KitchenObject GetKitchenObject()
+    {
+        return kitchenObject;
+    }
+
+    public void SetKitchenObject(KitchenObject kitchenObject)
+    {
+        this.kitchenObject = kitchenObject;
+    }
+
+    public Transform KitchenObjectSpawnPoint => kitchenObjectSpawnPoint;
+
 }
