@@ -6,7 +6,7 @@ public class KitchenObject : MonoBehaviour
 {
     private IKitchenObjectParent kitchenObjectParent;
 
-    public void SetBaseCounter(IKitchenObjectParent kitchenObjectParent)
+    public void SetKitchenObjectParent(IKitchenObjectParent kitchenObjectParent)
     {
         if (this.kitchenObjectParent != null)
         {
