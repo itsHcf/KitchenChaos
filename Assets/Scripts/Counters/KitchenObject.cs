@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class KitchenObject : MonoBehaviour
 {
+
     private IKitchenObjectParent kitchenObjectParent;
 
     public void SetKitchenObjectParent(IKitchenObjectParent kitchenObjectParent)
